@@ -14,18 +14,18 @@ export const useForm = <Schema>({
   fields,
   onSubmit,
 }: Payload<Schema>) => {
-  type Error = ZodFormattedError<Schema> | undefined;
-  const [error, setError] = useState<Error>(undefined);
+  type Errors = ZodFormattedError<Schema> | undefined;
+  const [errors, setErrors] = useState<Errors>(undefined);
   const [status, setStatus] = useState<Status>("neutral");
 
   const handleValidation = () => {
     const result = schema.safeParse(fields);
     onSubmit(result);
     if (!result.success) {
-      setError(result.error.format());
+      setErrors(result.error.format());
       setStatus("bad");
     } else {
-      setError(undefined);
+      setErrors(undefined);
       setStatus("good");
     }
   };
@@ -37,7 +37,7 @@ export const useForm = <Schema>({
 
   return {
     handleSubmit: handleValidation,
-    error,
+    errors,
     status,
   };
 };
