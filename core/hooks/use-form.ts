@@ -9,11 +9,7 @@ type Payload<Schema> = {
 
 type Status = "neutral" | "bad" | "good";
 
-export const useForm = <Schema>({
-  schema,
-  fields,
-  onSubmit,
-}: Payload<Schema>) => {
+const useForm = <Schema>({ schema, fields, onSubmit }: Payload<Schema>) => {
   type Errors = ZodFormattedError<Schema> | undefined;
   const [errors, setErrors] = useState<Errors>(undefined);
   const [status, setStatus] = useState<Status>("neutral");
@@ -40,3 +36,5 @@ export const useForm = <Schema>({
 
   return { handleSubmit, status, errors };
 };
+
+export default useForm;
