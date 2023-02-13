@@ -30,13 +30,13 @@ export const useForm = <Schema>({
     }
   };
 
+  const handleSubmit = () => {
+    handleValidation();
+  };
+
   useEffect(() => {
     status !== "neutral" && handleValidation();
   }, [fields]);
 
-  return {
-    handleSubmit: handleValidation,
-    errors,
-    status,
-  };
+  return { handleSubmit, status, errors };
 };
