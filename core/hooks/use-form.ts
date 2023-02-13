@@ -16,7 +16,6 @@ const useForm = <Schema>({ schema, fields, onSubmit }: Payload<Schema>) => {
 
   const handleValidation = () => {
     const result = schema.safeParse(fields);
-    onSubmit(result);
     if (!result.success) {
       setErrors(result.error.format());
       setStatus("invalid");
@@ -24,12 +23,14 @@ const useForm = <Schema>({ schema, fields, onSubmit }: Payload<Schema>) => {
       setErrors(undefined);
       setStatus("valid");
     }
+    return result;
   };
 
   type Event = React.MouseEvent<HTMLButtonElement, MouseEvent>;
   const handleSubmit = (event: Event) => {
     event.preventDefault();
-    handleValidation();
+    const result = handleValidation();
+    onSubmit(result);
   };
 
   useEffect(() => {
