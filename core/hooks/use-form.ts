@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { z, ZodFormattedError } from "zod";
+import { z, type ZodFormattedError } from "zod";
 
 type Payload<Schema> = {
   schema: z.Schema<Schema>;
@@ -32,6 +32,7 @@ export const useForm = <Schema>({
 
   useEffect(() => {
     status !== "neutral" && handleValidation();
+    console.log("rendered");
   }, [fields]);
 
   return {
