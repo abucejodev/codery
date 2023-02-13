@@ -26,7 +26,9 @@ const useForm = <Schema>({ schema, fields, onSubmit }: Payload<Schema>) => {
     }
   };
 
-  const handleSubmit = () => {
+  type Event = React.MouseEvent<HTMLButtonElement, MouseEvent>;
+  const handleSubmit = (event: Event) => {
+    event.preventDefault();
     handleValidation();
   };
 
