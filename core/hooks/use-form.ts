@@ -7,7 +7,7 @@ type Payload<Schema> = {
   onSubmit: (result: z.SafeParseReturnType<Schema, Schema>) => void;
 };
 
-type Status = "neutral" | "bad" | "good";
+type Status = "neutral" | "invalid" | "valid";
 
 const useForm = <Schema>({ schema, fields, onSubmit }: Payload<Schema>) => {
   type Errors = ZodFormattedError<Schema> | undefined;
@@ -19,10 +19,10 @@ const useForm = <Schema>({ schema, fields, onSubmit }: Payload<Schema>) => {
     onSubmit(result);
     if (!result.success) {
       setErrors(result.error.format());
-      setStatus("bad");
+      setStatus("invalid");
     } else {
       setErrors(undefined);
-      setStatus("good");
+      setStatus("valid");
     }
   };
 
