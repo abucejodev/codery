@@ -32,7 +32,6 @@ export const useForm = <Schema>({
 
   useEffect(() => {
     status !== "neutral" && handleValidation();
-    console.log("rendered");
   }, [fields]);
 
   return {
