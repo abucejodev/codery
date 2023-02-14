@@ -1,13 +1,11 @@
-import useSWR, { type SWRConfiguration } from "swr";
+import useSWR, { type SWRResponse, type SWRConfiguration } from "swr";
 
-type Payload = {
+type Payload<Data> = {
   key: string;
-  config: SWRConfiguration & {
-    fallbackData: any;
-  };
+  config: SWRConfiguration<Data>;
 };
 
-const useQuery = <Data>({ key, config }: Payload) => {
+const useQuery = <Data>({ key, config }: Payload<Data>): SWRResponse<Data> => {
   const response = useSWR<Data>(key, config);
   return response;
 };
