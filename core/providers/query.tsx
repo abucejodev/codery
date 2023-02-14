@@ -13,7 +13,7 @@ const Query = ({ children }: Props) => {
     return data;
   };
 
-  const configuration: SWRConfiguration = {
+  const config: SWRConfiguration = {
     fetcher,
     suspense: true,
     revalidateOnFocus: false,
@@ -21,7 +21,7 @@ const Query = ({ children }: Props) => {
     revalidateOnMount: true,
   };
 
-  return <SWRConfig value={configuration}>{children}</SWRConfig>;
+  return <SWRConfig value={config}>{children}</SWRConfig>;
 };
 
 export default Query;
