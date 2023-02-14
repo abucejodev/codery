@@ -1,3 +1,8 @@
+/*
+ * This SWR hook enables client-side data fetching and caching,
+ * providing real-time data and reducing network requests
+ */
+
 import useSWR, { type SWRResponse, type SWRConfiguration } from "swr";
 
 type Payload<Data> = {

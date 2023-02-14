@@ -1,3 +1,11 @@
+/*
+ * This React hook utilizes the Zod library to handle form validation and data management.
+ * It requires the use of schemas and fields to function properly,
+ * which must be matched correctly.
+ * The on-submit function will fire when the handleSubmit method is triggered,
+ * providing necessary data like the results to be utilized by the client.
+ */
+
 import { useEffect, useState } from "react";
 import { z, type ZodFormattedError } from "zod";
 
