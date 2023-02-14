@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "sync": "prisma db push",
+    "studio": "prisma studio --port 7777",
     "format": "prettier --write app/**/* core/**/*"
   },
   "dependencies": {
