@@ -10,6 +10,9 @@ module.exports = {
       desktop: "1280px",
     },
     extend: {
+      borderRadius: {
+        DEFAULT: "0.5rem",
+      },
       fontSize: {
         ms: "10px",
       },
