@@ -9,7 +9,11 @@ module.exports = {
       laptop: "1024px",
       desktop: "1280px",
     },
-    extend: {},
+    extend: {
+      fontSize: {
+        ms: "10px",
+      },
+    },
   },
   plugins: [],
 };
