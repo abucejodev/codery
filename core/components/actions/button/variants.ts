@@ -31,7 +31,10 @@ const variants = cva(
       {
         intent: "primary",
         theme: "normal",
-        class: ["bg-dark [&>#spinner]:stroke-light text-light border-dark"],
+        class: [
+          "bg-dark [&>#spinner]:stroke-light text-light border-dark",
+          "dark:bg-light dark:text-dark dark:border-light dark:[&>#spinner]:stroke-dark",
+        ],
       },
       {
         intent: "primary",
@@ -63,6 +66,8 @@ const variants = cva(
         class: [
           "border-dark [&>#spinner]:stroke-dark text-dark",
           "enabled:hover:bg-dark enabled:hover:text-light",
+          "dark:text-light dark:border-light dark:[&>#spinner]:stroke-light",
+          "dark:enabled:hover:bg-light dark:enabled:hover:text-dark",
         ],
       },
       {
@@ -100,7 +105,10 @@ const variants = cva(
       {
         intent: "tertiary",
         theme: "normal",
-        class: ["text-dark [&>#spinner]:stroke-dark"],
+        class: [
+          "text-dark [&>#spinner]:stroke-dark",
+          "dark:text-light dark:[&>#spinner]:stroke-light",
+        ],
       },
       {
         intent: "tertiary",
