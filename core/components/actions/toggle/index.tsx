@@ -14,7 +14,7 @@ const Toggle = ({ isEnabled = false, onChange = () => {} }: Props) => {
       checked={isEnabled}
       onChange={onChange}
       className={cx([
-        "h-6 w-12 cursor-pointer rounded-full border-2 border-transparent focus:outline-none",
+        "h-6 w-10 cursor-pointer rounded-full border-2 border-transparent focus:outline-none",
         "flex-none transition-colors duration-200 ease-in-out",
         `${isEnabled ? "bg-night dark:bg-day" : "bg-night/20 dark:bg-day/20"}
       `,
@@ -25,7 +25,7 @@ const Toggle = ({ isEnabled = false, onChange = () => {} }: Props) => {
           "pointer-events-none inline-block h-5 w-5 rounded-full bg-day ring-0",
           "dark:bg-night",
           "transition duration-200 ease-in-out",
-          `${isEnabled ? "translate-x-3" : "-translate-x-3"}
+          `${isEnabled ? "translate-x-2" : "-translate-x-2"}
         `,
         ])}
       />
