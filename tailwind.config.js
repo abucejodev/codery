@@ -16,6 +16,14 @@ module.exports = {
       fontSize: {
         ms: "10px",
       },
+      colors: {
+        dark: "#011627",
+        light: "#FDFFFC",
+        brand: "#CA3CFF",
+        success: "#47C200",
+        warning: "#FF9F1C",
+        error: "#F71735",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
