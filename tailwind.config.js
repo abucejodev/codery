@@ -17,8 +17,8 @@ module.exports = {
         ms: "10px",
       },
       colors: {
-        night: "#011627",
-        day: "#FDFFFC",
+        night: "#1A1A1B",
+        day: "#F7F7F7",
         brand: "#CA3CFF",
         success: "#47C200",
         warning: "#FF9F1C",
