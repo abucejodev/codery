@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 const variants = cva(
   [
-    "rounded px-4 py-2 text-sm font-semibold whitespace-nowrap",
+    "rounded px-6 py-2 text-sm font-semibold whitespace-nowrap border",
     "flex items-center gap-2",
     "focus:outline-sky-500 enabled:active:scale-95 disabled:opacity-50",
     "transition-all duration-100 ease-in",
@@ -10,88 +10,122 @@ const variants = cva(
   {
     variants: {
       intent: {
-        primary: [],
+        primary: [
+          "enabled:hover:bg-opacity-80 enabled:hover:border-opacity-10",
+        ],
         secondary: [],
-        tertiary: [],
+        tertiary: ["border-transparent enabled:hover:text-opacity-80"],
       },
-      mode: {
+      theme: {
         normal: [],
+        brand: [],
         success: [],
         warning: [],
-        danger: [],
+        error: [],
       },
       isFull: {
         true: ["w-full", "flex justify-center"],
       },
     },
     compoundVariants: [
-      // primary
       {
         intent: "primary",
-        mode: "normal",
-        class: [],
-      },
-      {
-        intent: "primary",
-        mode: "success",
-        class: [],
+        theme: "normal",
+        class: ["bg-dark [&>#spinner]:stroke-light text-light border-dark"],
       },
       {
         intent: "primary",
-        mode: "warning",
-        class: [],
+        theme: "brand",
+        class: ["bg-brand [&>#spinner]:stroke-light text-light border-brand"],
       },
       {
         intent: "primary",
-        mode: "danger",
-        class: [],
-      },
-      // secondary
-      {
-        intent: "secondary",
-        mode: "normal",
-        class: [],
+        theme: "success",
+        class: [
+          "bg-success [&>#spinner]:stroke-light text-light border-success",
+        ],
       },
       {
-        intent: "secondary",
-        mode: "success",
-        class: [],
+        intent: "primary",
+        theme: "warning",
+        class: [
+          "bg-warning [&>#spinner]:stroke-light text-light border-warning",
+        ],
       },
       {
-        intent: "secondary",
-        mode: "warning",
-        class: [],
+        intent: "primary",
+        theme: "error",
+        class: ["bg-error [&>#spinner]:stroke-light text-light border-error"],
       },
       {
         intent: "secondary",
-        mode: "danger",
-        class: [],
-      },
-      // tertiary
-      {
-        intent: "tertiary",
-        mode: "normal",
-        class: [],
+        theme: "normal",
+        class: [
+          "border-dark [&>#spinner]:stroke-dark text-dark",
+          "enabled:hover:bg-dark enabled:hover:text-light",
+        ],
       },
       {
-        intent: "tertiary",
-        mode: "success",
-        class: [],
+        intent: "secondary",
+        theme: "brand",
+        class: [
+          "border-brand [&>#spinner]:stroke-brand text-brand",
+          "enabled:hover:bg-brand enabled:hover:text-light",
+        ],
+      },
+      {
+        intent: "secondary",
+        theme: "success",
+        class: [
+          "border-success [&>#spinner]:stroke-success text-success",
+          "enabled:hover:bg-success enabled:hover:text-light",
+        ],
+      },
+      {
+        intent: "secondary",
+        theme: "warning",
+        class: [
+          "border-warning [&>#spinner]:stroke-warning text-warning",
+          "enabled:hover:bg-warning enabled:hover:text-light",
+        ],
+      },
+      {
+        intent: "secondary",
+        theme: "error",
+        class: [
+          "border-error [&>#spinner]:stroke-error text-error",
+          "enabled:hover:bg-error enabled:hover:text-light",
+        ],
       },
       {
         intent: "tertiary",
-        mode: "warning",
-        class: [],
+        theme: "normal",
+        class: ["text-dark [&>#spinner]:stroke-dark"],
       },
       {
         intent: "tertiary",
-        mode: "danger",
-        class: [],
+        theme: "brand",
+        class: ["text-brand [&>#spinner]:stroke-brand"],
+      },
+      {
+        intent: "tertiary",
+        theme: "success",
+        class: ["text-success [&>#spinner]:stroke-success"],
+      },
+      {
+        intent: "tertiary",
+        theme: "warning",
+        class: ["text-warning [&>#spinner]:stroke-warning"],
+      },
+      {
+        intent: "tertiary",
+        theme: "error",
+        class: ["text-error [&>#spinner]:stroke-error"],
       },
     ],
     defaultVariants: {
       intent: "primary",
-      mode: "normal",
+      theme: "normal",
     },
   }
 );
