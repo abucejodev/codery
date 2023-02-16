@@ -32,42 +32,42 @@ const variants = cva(
         intent: "primary",
         theme: "normal",
         class: [
-          "bg-dark [&>#spinner]:stroke-light text-light border-dark",
-          "dark:bg-light dark:text-dark dark:border-light dark:[&>#spinner]:stroke-dark",
+          "bg-night [&>#spinner]:stroke-day text-day border-night",
+          "dark:bg-day dark:text-night dark:border-day dark:[&>#spinner]:stroke-night",
         ],
       },
       {
         intent: "primary",
         theme: "brand",
-        class: ["bg-brand [&>#spinner]:stroke-light text-light border-brand"],
+        class: ["bg-brand [&>#spinner]:stroke-day text-day border-brand"],
       },
       {
         intent: "primary",
         theme: "success",
         class: [
-          "bg-success [&>#spinner]:stroke-light text-light border-success",
+          "bg-success [&>#spinner]:stroke-day text-day border-success",
         ],
       },
       {
         intent: "primary",
         theme: "warning",
         class: [
-          "bg-warning [&>#spinner]:stroke-light text-light border-warning",
+          "bg-warning [&>#spinner]:stroke-day text-day border-warning",
         ],
       },
       {
         intent: "primary",
         theme: "error",
-        class: ["bg-error [&>#spinner]:stroke-light text-light border-error"],
+        class: ["bg-error [&>#spinner]:stroke-day text-day border-error"],
       },
       {
         intent: "secondary",
         theme: "normal",
         class: [
-          "border-dark [&>#spinner]:stroke-dark text-dark",
-          "enabled:hover:bg-dark enabled:hover:text-light",
-          "dark:text-light dark:border-light dark:[&>#spinner]:stroke-light",
-          "dark:enabled:hover:bg-light dark:enabled:hover:text-dark",
+          "border-night [&>#spinner]:stroke-night text-night",
+          "enabled:hover:bg-night enabled:hover:text-day",
+          "dark:text-day dark:border-day dark:[&>#spinner]:stroke-day",
+          "dark:enabled:hover:bg-day dark:enabled:hover:text-night",
         ],
       },
       {
@@ -75,7 +75,7 @@ const variants = cva(
         theme: "brand",
         class: [
           "border-brand [&>#spinner]:stroke-brand text-brand",
-          "enabled:hover:bg-brand enabled:hover:text-light",
+          "enabled:hover:bg-brand enabled:hover:text-day",
         ],
       },
       {
@@ -83,7 +83,7 @@ const variants = cva(
         theme: "success",
         class: [
           "border-success [&>#spinner]:stroke-success text-success",
-          "enabled:hover:bg-success enabled:hover:text-light",
+          "enabled:hover:bg-success enabled:hover:text-day",
         ],
       },
       {
@@ -91,7 +91,7 @@ const variants = cva(
         theme: "warning",
         class: [
           "border-warning [&>#spinner]:stroke-warning text-warning",
-          "enabled:hover:bg-warning enabled:hover:text-light",
+          "enabled:hover:bg-warning enabled:hover:text-day",
         ],
       },
       {
@@ -99,15 +99,15 @@ const variants = cva(
         theme: "error",
         class: [
           "border-error [&>#spinner]:stroke-error text-error",
-          "enabled:hover:bg-error enabled:hover:text-light",
+          "enabled:hover:bg-error enabled:hover:text-day",
         ],
       },
       {
         intent: "tertiary",
         theme: "normal",
         class: [
-          "text-dark [&>#spinner]:stroke-dark",
-          "dark:text-light dark:[&>#spinner]:stroke-light",
+          "text-night [&>#spinner]:stroke-night",
+          "dark:text-day dark:[&>#spinner]:stroke-day",
         ],
       },
       {
