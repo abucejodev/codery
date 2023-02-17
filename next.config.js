@@ -3,6 +3,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  images: {
+    domains: ["images.unsplash.com"],
+  },
   modularizeImports: {
     "@heroicons/react/24/outline": {
       transform: "@heroicons/react/24/outline/{{member}}",
