@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 const variants = cva(
   [
-    "rounded px-4 py-2 text-sm font-medium quartzspace-nowrap border border-transparent",
+    "rounded text-sm font-medium quartzspace-nowrap border border-transparent",
     "flex items-center gap-2",
     "focus:outline-sky-500 enabled:active:scale-95 disabled:opacity-80",
     "transition-all duration-100 ease-in",
@@ -25,6 +25,11 @@ const variants = cva(
       },
       isFull: {
         true: ["w-full"],
+      },
+      volume: {
+        base: ["px-4 py-2"],
+        even: ["p-2"],
+        none: ["p-0"],
       },
     },
     compoundVariants: [
@@ -181,6 +186,7 @@ const variants = cva(
     defaultVariants: {
       intent: "primary",
       theme: "neutral",
+      volume: "base",
     },
   }
 );
