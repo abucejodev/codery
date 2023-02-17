@@ -18,13 +18,15 @@ const variants = cva(
       },
       theme: {
         normal: [],
+        white: ["text-night", "dark:text-day"],
+        black: ["text-night", "dark:text-day"],
         brand: [],
         success: [],
         warning: [],
         error: [],
       },
       isFull: {
-        true: ["w-full", "flex justify-center"],
+        true: ["w-full", "flex justify-cen text-dayter"],
       },
     },
     compoundVariants: [
@@ -35,6 +37,19 @@ const variants = cva(
           "bg-night [&>#spinner]:stroke-day text-day border-night",
           "dark:bg-day dark:text-night dark:border-day dark:[&>#spinner]:stroke-night",
         ],
+      },
+      {
+        intent: "primary",
+        theme: "white",
+        class: [
+          "bg-day border-day [&>#spinner]:stroke-night",
+          "dark:text-night",
+        ],
+      },
+      {
+        intent: "primary",
+        theme: "black",
+        class: ["bg-night [&>#spinner]:stroke-day border-night text-day"],
       },
       {
         intent: "primary",
@@ -64,6 +79,24 @@ const variants = cva(
           "enabled:hover:bg-night enabled:hover:text-day",
           "dark:text-day dark:border-day dark:[&>#spinner]:stroke-day",
           "dark:enabled:hover:bg-day dark:enabled:hover:text-night",
+        ],
+      },
+      {
+        intent: "secondary",
+        theme: "white",
+        class: [
+          "border-day [&>#spinner]:stroke-night text-night",
+          "enabled:hover:bg-day enabled:hover:text-night enabled:hover:border-day",
+          "dark:[&>#spinner]:stroke-day",
+        ],
+      },
+      {
+        intent: "secondary",
+        theme: "black",
+        class: [
+          "border-day/20 [&>#spinner]:stroke-night text-night",
+          "enabled:hover:bg-night enabled:hover:text-day",
+          "dark:[&>#spinner]:stroke-day",
         ],
       },
       {
@@ -101,6 +134,22 @@ const variants = cva(
       {
         intent: "tertiary",
         theme: "normal",
+        class: [
+          "text-night [&>#spinner]:stroke-night",
+          "dark:text-day dark:[&>#spinner]:stroke-day",
+        ],
+      },
+      {
+        intent: "tertiary",
+        theme: "white",
+        class: [
+          "text-night [&>#spinner]:stroke-night",
+          "dark:text-day dark:[&>#spinner]:stroke-day",
+        ],
+      },
+      {
+        intent: "tertiary",
+        theme: "black",
         class: [
           "text-night [&>#spinner]:stroke-night",
           "dark:text-day dark:[&>#spinner]:stroke-day",
