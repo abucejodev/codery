@@ -8,18 +8,18 @@ import variants, { type Variants } from "../../variants";
 import { cx } from "class-variance-authority";
 
 type Props = Pick<Variants, "intent"> & {
-  children: React.ReactNode;
   theme?: Extract<
     Variants["theme"],
     "neutral" | "inverse" | "quartz" | "obsidian"
   >;
-  name: string;
+  children: React.ReactNode;
+  Button: React.ReactNode;
   position?: "top/left" | "top/right" | "bottom/left" | "bottom/right";
 };
 
 const Menu = ({
   children,
-  name,
+  Button,
   position = "bottom/left",
   ...props
 }: Props) => {
@@ -28,7 +28,7 @@ const Menu = ({
       {({ open }) => (
         <>
           <HeadlessMenu.Button className={purge(variants(props))}>
-            <span>{name}</span>
+            {Button}
             <ChevronDownIcon
               className={cx([
                 "h-4 w-4 stroke-2",
