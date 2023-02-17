@@ -30,14 +30,6 @@ const Menu = ({
         <>
           <HeadlessMenu.Button className={purge(variants(props))}>
             {Button}
-            <ChevronDownIcon
-              className={cx([
-                "h-4 w-4 stroke-2",
-                "transition-transform duration-75 ease-in",
-                `${open ? "rotate-180" : "rotate-0"}`,
-              ])}
-              aria-hidden="true"
-            />
           </HeadlessMenu.Button>
           <Transition
             as={Fragment}
