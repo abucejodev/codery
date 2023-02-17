@@ -5,8 +5,8 @@ import Spinner from "../../fragments/spinner";
 import variants, { type Variants } from "../variants";
 
 type Props = Variants & {
-  children: React.ReactNode;
   Icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  name?: string;
   isFull?: boolean;
   isLoading?: boolean;
   isDisabled?: boolean;
@@ -14,8 +14,8 @@ type Props = Variants & {
 };
 
 const Button = ({
-  children,
   Icon,
+  name,
   isLoading = false,
   isDisabled = false,
   onClick = () => {},
@@ -28,7 +28,7 @@ const Button = ({
       className={purge(variants(props))}>
       {isLoading ? <Spinner /> : <></>}
       {Icon && !isLoading ? <Icon className="h-4 w-4 stroke-2" /> : <></>}
-      <span className="whitespace-nowrap">{children}</span>
+      {name ? <span className="whitespace-nowrap">{name}</span> : <></>}
     </button>
   );
 };
