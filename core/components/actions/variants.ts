@@ -24,7 +24,7 @@ const variants = cva(
         ruby: [],
       },
       isFull: {
-        true: [],
+        true: ["w-full"],
       },
     },
     compoundVariants: [
