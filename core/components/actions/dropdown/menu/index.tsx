@@ -9,7 +9,10 @@ import { cx } from "class-variance-authority";
 
 type Props = Pick<Variants, "intent"> & {
   children: React.ReactNode;
-  theme?: Extract<Variants["theme"], "white" | "black">;
+  theme?: Extract<
+    Variants["theme"],
+    "neutral" | "inverse" | "quartz" | "obsidian"
+  >;
   name: string;
   position?: "top/left" | "top/right" | "bottom/left" | "bottom/right";
 };
@@ -45,8 +48,8 @@ const Menu = ({
             leaveTo="transform opacity-0 scale-95">
             <HeadlessMenu.Items
               className={cx([
-                "absolute z-10 w-56 divide-y rounded bg-white shadow-lg",
-                "dark:divide-day/20 dark:bg-night dark:text-day",
+                "absolute z-10 w-56 divide-y rounded bg-quartz shadow-lg",
+                "dark:divide-quartz/20 dark:bg-obsidian dark:text-quartz",
                 "focus:outline-none",
                 `${position === "top/left" ? "bottom-full left-0 mb-2" : ""}`,
                 `${position === "top/right" ? "bottom-full right-0 mb-2" : ""}`,
