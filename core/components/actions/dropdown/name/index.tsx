@@ -3,11 +3,7 @@ type Props = {
 };
 
 const Name = ({ value }: Props) => {
-  return (
-    <span id="name" className="whitespace-nowrap leading-4">
-      {value}
-    </span>
-  );
+  return <span id="name">{value}</span>;
 };
 
 export default Name;
