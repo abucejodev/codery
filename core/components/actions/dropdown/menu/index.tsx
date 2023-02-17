@@ -2,7 +2,6 @@
 
 import { Menu as HeadlessMenu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import purge from "@/core/libraries/purge";
 import variants, { type Variants } from "../../variants";
 import { cx } from "class-variance-authority";
