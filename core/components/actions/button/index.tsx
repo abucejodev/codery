@@ -28,7 +28,7 @@ const Button = ({
       className={purge(variants(props))}>
       {isLoading ? <Spinner /> : <></>}
       {Icon && !isLoading ? <Icon className="h-4 w-4 stroke-2" /> : <></>}
-      <span>{children}</span>
+      <span className="whitespace-nowrap">{children}</span>
     </button>
   );
 };
