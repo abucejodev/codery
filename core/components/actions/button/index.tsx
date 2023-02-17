@@ -2,7 +2,7 @@
 
 import purge from "@/core/libraries/purge";
 import Spinner from "../../fragments/spinner";
-import variants, { type Variants } from "./variants";
+import variants, { type Variants } from "../variants";
 
 type Props = Variants & {
   children: React.ReactNode;
