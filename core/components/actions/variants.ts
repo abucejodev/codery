@@ -74,6 +74,7 @@ const variants = cva(
         theme: "neutral",
         class: [
           "text-obsidian border-quartz [&>#spinner]:stroke-obsidian",
+          "enabled:hover:bg-quartz",
           "dark:enabled:hover:bg-obsidian dark:text-quartz dark:border-obsidian",
           "dark:text-quartz dark:enabled:hover:border-obsidian dark:[&>#spinner]:stroke-quartz",
         ],
