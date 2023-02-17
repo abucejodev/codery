@@ -41,7 +41,7 @@ const Menu = ({
             leaveTo="transform opacity-0 scale-95">
             <HeadlessMenu.Items
               className={cx([
-                "absolute z-10 w-56 divide-y rounded bg-quartz shadow-lg",
+                "absolute z-10 w-64 divide-y rounded bg-quartz shadow-lg",
                 "dark:divide-quartz/20 dark:bg-obsidian dark:text-quartz",
                 "focus:outline-none",
                 `${position === "top/left" ? "bottom-full left-0 mb-2" : ""}`,
