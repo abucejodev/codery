@@ -21,7 +21,7 @@ module.exports = {
         obsidian: "#221E22",
         quartz: "#F3F3F6",
         emerald: "#47C200",
-        amber: "#FF9F1C",
+        amber: "#ff7b00",
         ruby: "#F71735",
       },
     },
