@@ -6,16 +6,16 @@ import purge from "@/core/libraries/purge";
 import variants, { type Variants } from "../../variants";
 import { cx } from "class-variance-authority";
 
-type Props = Pick<Variants, "intent"> &
-  Pick<Variants, "volume"> & {
-    theme?: Extract<
-      Variants["theme"],
-      "neutral" | "inverse" | "quartz" | "obsidian"
-    >;
-    children: React.ReactNode;
-    Button: React.ReactNode;
-    position?: "top/left" | "top/right" | "bottom/left" | "bottom/right";
-  };
+type Props = Pick<Variants, "intent" | "volume" | "theme"> & {
+  theme?: Extract<
+    Variants["theme"],
+    "neutral" | "inverse" | "quartz" | "obsidian"
+  >;
+  volume?: Extract<Variants["volume"], "base" | "none">;
+  children: React.ReactNode;
+  Button: React.ReactNode;
+  position?: "top/left" | "top/right" | "bottom/left" | "bottom/right";
+};
 
 const Menu = ({
   children,
