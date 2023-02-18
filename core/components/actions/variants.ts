@@ -78,9 +78,9 @@ const variants = cva(
         intent: "secondary",
         theme: "neutral",
         class: [
-          "text-obsidian border-quartz [&_#spinner]:stroke-obsidian",
-          "enabled:hover:bg-quartz",
-          "dark:enabled:hover:bg-obsidian dark:text-quartz dark:border-obsidian",
+          "text-obsidian border-obsidian [&_#spinner]:stroke-obsidian",
+          "enabled:hover:bg-quartz enabled:hover:border-quartz",
+          "dark:enabled:hover:bg-obsidian dark:text-quartz dark:border-quartz",
           "dark:text-quartz dark:enabled:hover:border-obsidian dark:[&_#spinner]:stroke-quartz",
         ],
       },
@@ -97,7 +97,7 @@ const variants = cva(
         intent: "secondary",
         theme: "quartz",
         class: [
-          "text-obsidian border-quartz [&_#spinner]:stroke-obsidian",
+          "text-obsidian border-obsidian [&_#spinner]:stroke-obsidian",
           "enabled:hover:bg-quartz enabled:hover:border-quartz",
           "dark:text-quartz dark:border-quartz dark:enabled:hover:text-obsidian dark:[&_#spinner]:stroke-quartz",
         ],
@@ -108,7 +108,7 @@ const variants = cva(
         class: [
           "text-obsidian border-obsidian [&_#spinner]:stroke-obsidian",
           "enabled:hover:bg-obsidian enabled:hover:text-quartz",
-          "dark:text-quartz dark:enabled:hover:border-obsidian dark:[&_#spinner]:stroke-quartz",
+          "dark:text-quartz dark:border-quartz dark:enabled:hover:border-obsidian dark:[&_#spinner]:stroke-quartz",
         ],
       },
       {
