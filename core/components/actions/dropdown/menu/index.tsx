@@ -35,12 +35,17 @@ const Menu = ({
 }: Props) => {
   return (
     <HeadlessMenu as="div" className="relative inline-block text-left">
-      <HeadlessMenu.Button className={purge(variants(props))}>
-        {/* In order to apply the Custom component passed, Icon, and label must be excluded */}
-        {Icon ? <Icon className="h-4 w-4 stroke-2" /> : <></>}
-        {label ? <span>{label}</span> : <></>}
-        {!label && !Icon && Custom ? Custom : <></>}
-      </HeadlessMenu.Button>
+      {/* In order to apply the Custom component passed, Icon, and label must be excluded */}
+      {Custom ? (
+        <HeadlessMenu.Button className={purge(variants(props))}>
+          {Custom}
+        </HeadlessMenu.Button>
+      ) : (
+        <HeadlessMenu.Button className={purge(variants(props))}>
+          {Icon ? <Icon className="h-4 w-4 stroke-2" /> : <></>}
+          {label ? <span>{label}</span> : <></>}
+        </HeadlessMenu.Button>
+      )}
       <Transition
         as={Fragment}
         enter="transition ease-out duration-100"
