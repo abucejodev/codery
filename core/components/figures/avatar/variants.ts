@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 const variants = cva(
   [
-    "relative flex-none rounded-full border-2 border-obsidian/20 overflow-hidden",
+    "relative flex-none border-2 border-obsidian/20 overflow-hidden",
     "dark:border-quartz/20",
   ],
   {
@@ -17,11 +17,16 @@ const variants = cva(
         away: [],
         offline: [],
       },
+      shape: {
+        circle: ["rounded-full"],
+        square: ["rounded"],
+      },
     },
     compoundVariants: [],
     defaultVariants: {
       size: "small",
       status: "online",
+      shape: "circle",
     },
   }
 );
