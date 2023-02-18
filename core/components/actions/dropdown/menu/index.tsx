@@ -5,12 +5,16 @@ import { Fragment } from "react";
 import purge from "@/core/libraries/purge";
 import variants, { type Variants } from "../../variants";
 import { cx } from "class-variance-authority";
-import Character from "@/core/components/figures/character";
 
 /* TODO:
  * Make this type that work something like this
  * When passing Custom component the Icon and label type must be excluded
  * And if Icon or Label is passed Custom component must be excluded
+ */
+
+/*
+ * Current supported components to passed in for Custom prop
+ * 1 Character
  */
 
 type Props = Pick<Variants, "intent" | "volume" | "theme"> & {
