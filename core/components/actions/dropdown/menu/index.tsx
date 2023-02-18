@@ -5,6 +5,7 @@ import { Fragment } from "react";
 import purge from "@/core/libraries/purge";
 import variants, { type Variants } from "../../variants";
 import { cx } from "class-variance-authority";
+import Avatar from "@/core/components/figures/avatar";
 
 type Props = Pick<Variants, "intent" | "volume" | "theme"> & {
   theme?: Extract<
@@ -13,13 +14,15 @@ type Props = Pick<Variants, "intent" | "volume" | "theme"> & {
   >;
   volume?: Extract<Variants["volume"], "base" | "none">;
   children: React.ReactNode;
-  Button: React.ReactNode;
+  name: string;
+  avatar?: string;
   position?: "top/left" | "top/right" | "bottom/left" | "bottom/right";
 };
 
 const Menu = ({
   children,
-  Button,
+  name,
+  avatar,
   position = "bottom/left",
   ...props
 }: Props) => {
@@ -27,8 +30,17 @@ const Menu = ({
     <HeadlessMenu as="div" className="relative inline-block text-left">
       {({ open }) => (
         <>
-          <HeadlessMenu.Button className={purge(variants(props))}>
-            {Button}
+          {/* When avatar prop is passed volume and intent will defaulted to specific values */}
+          <HeadlessMenu.Button
+            className={purge(
+              variants({
+                ...props,
+                volume: avatar ? "none" : props.volume,
+                intent: avatar ? "tertiary" : props.intent,
+              })
+            )}>
+            {avatar ? <Avatar alt="Me" src={avatar} /> : <></>}
+            <span id="name">{name}</span>
           </HeadlessMenu.Button>
           <Transition
             as={Fragment}
