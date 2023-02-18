@@ -10,7 +10,7 @@ const variants = cva(
       size: {
         small: ["h-8 w-8"],
         medium: ["h-12 w-12"],
-        large: ["h-24 w-24"],
+        large: ["h-20 w-20"],
       },
       status: {
         online: [],
