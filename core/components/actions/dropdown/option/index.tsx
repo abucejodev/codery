@@ -26,8 +26,9 @@ const Option = ({
             "flex w-full items-center gap-2 rounded p-2 text-sm text-obsidian",
             "dark:text-quartz",
             "transition-all duration-100 ease-in",
-            // prettier-ignore
-            `${active ? "bg-obsidian/10 dark:bg-quartz/10 dark:text-quartz" : ""}`,
+            `${
+              active ? "bg-obsidian/10 dark:bg-quartz/10 dark:text-quartz" : ""
+            }`,
             `${
               disabled
                 ? "text-obsidian/50 dark:text-quartz/50"
