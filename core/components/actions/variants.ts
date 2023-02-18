@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 const variants = cva(
   [
-    "rounded text-sm font-medium quartzspace-nowrap border border-transparent [&_#name]:whitespace-nowrap [&_#name]:leading-4",
+    "rounded text-sm font-medium quartzspace-nowrap border border-transparent [&_span]:whitespace-nowrap [&_span]:leading-4",
     "flex items-center gap-2",
     "focus:outline-sky-500 enabled:active:scale-95 disabled:opacity-80",
     "transition-all duration-100 ease-in",
@@ -24,7 +24,8 @@ const variants = cva(
         ruby: [],
       },
       isFull: {
-        true: ["w-full"],
+        true: ["w-full justify-center"],
+        false: ["text-left"],
       },
       volume: {
         base: ["px-4 py-2"],
@@ -185,6 +186,7 @@ const variants = cva(
     ],
     defaultVariants: {
       intent: "primary",
+      isFull: false,
       theme: "neutral",
       volume: "base",
     },

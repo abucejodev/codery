@@ -12,16 +12,19 @@ type Props = Pick<Variants, "intent" | "volume" | "theme"> & {
     Variants["theme"],
     "neutral" | "inverse" | "quartz" | "obsidian"
   >;
-  volume?: Extract<Variants["volume"], "base" | "none">;
   children: React.ReactNode;
-  name: string;
+  Icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  name?: string;
+  about?: string;
   avatar?: string;
   position?: "top/left" | "top/right" | "bottom/left" | "bottom/right";
 };
 
 const Menu = ({
   children,
+  Icon,
   name,
+  about,
   avatar,
   position = "bottom/left",
   ...props
@@ -30,17 +33,18 @@ const Menu = ({
     <HeadlessMenu as="div" className="relative inline-block text-left">
       {({ open }) => (
         <>
-          {/* When avatar prop is passed volume and intent will defaulted to specific values */}
-          <HeadlessMenu.Button
-            className={purge(
-              variants({
-                ...props,
-                volume: avatar ? "none" : props.volume,
-                intent: avatar ? "tertiary" : props.intent,
-              })
-            )}>
+          <HeadlessMenu.Button className={purge(variants(props))}>
             {avatar ? <Avatar alt="Me" src={avatar} /> : <></>}
-            <span id="name">{name}</span>
+            {Icon ? <Icon className="h-4 w-4 stroke-2" /> : <></>}
+            {name && !about ? <span>{name}</span> : <></>}
+            {name && about ? (
+              <div className="flex flex-col">
+                <span>{name}</span>
+                <span className="text-xs font-normal opacity-80">{about}</span>
+              </div>
+            ) : (
+              <></>
+            )}
           </HeadlessMenu.Button>
           <Transition
             as={Fragment}
