@@ -25,11 +25,10 @@ const Option = ({
           className={cx([
             "flex w-full items-center gap-2 rounded p-2 text-sm text-obsidian",
             "dark:text-quartz",
-            "active:scale-95",
             "transition-all duration-100 ease-in",
             // prettier-ignore
             `${active ? "bg-obsidian/10 dark:bg-quartz/10 dark:text-quartz" : ""}
-             ${disabled ? "text-obsidian/50 dark:text-quartz/50" : ""}`,
+             ${disabled ? "text-obsidian/50 dark:text-quartz/50" : "active:scale-95"}`,
           ])}>
           {Icon ? <Icon className="h-4 w-4 stroke-2" /> : <></>}
           <span>{name}</span>
