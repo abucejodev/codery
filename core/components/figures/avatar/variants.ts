@@ -12,11 +12,6 @@ const variants = cva(
         medium: ["h-12 w-12"],
         large: ["h-20 w-20"],
       },
-      status: {
-        online: [],
-        away: [],
-        offline: [],
-      },
       shape: {
         circle: ["rounded-full"],
         square: ["rounded"],
@@ -25,7 +20,6 @@ const variants = cva(
     compoundVariants: [],
     defaultVariants: {
       size: "small",
-      status: "online",
       shape: "circle",
     },
   }
