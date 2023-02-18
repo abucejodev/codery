@@ -27,8 +27,12 @@ const Option = ({
             "dark:text-quartz",
             "transition-all duration-100 ease-in",
             // prettier-ignore
-            `${active ? "bg-obsidian/10 dark:bg-quartz/10 dark:text-quartz" : ""}
-             ${disabled ? "text-obsidian/50 dark:text-quartz/50" : "active:scale-95"}`,
+            `${active ? "bg-obsidian/10 dark:bg-quartz/10 dark:text-quartz" : ""}`,
+            `${
+              disabled
+                ? "text-obsidian/50 dark:text-quartz/50"
+                : "active:bg-obsidian/20 dark:active:bg-quartz/20"
+            }`,
           ])}>
           {Icon ? <Icon className="h-4 w-4 stroke-2" /> : <></>}
           <span>{name}</span>
