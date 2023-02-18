@@ -4,7 +4,7 @@ import { cx } from "class-variance-authority";
 
 type Props = {
   Icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  name: string;
+  label: string;
   status?: Extract<Status, "warning">;
   isDisabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -12,7 +12,7 @@ type Props = {
 
 const Option = ({
   Icon,
-  name,
+  label,
   status,
   isDisabled = false,
   onClick = () => {},
@@ -36,7 +36,7 @@ const Option = ({
             }`,
           ])}>
           {Icon ? <Icon className="h-4 w-4 stroke-2" /> : <></>}
-          <span>{name}</span>
+          <span>{label}</span>
           <Indicator status={status} className="ml-auto" />
         </button>
       )}

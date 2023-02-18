@@ -7,6 +7,12 @@ import variants, { type Variants } from "../../variants";
 import { cx } from "class-variance-authority";
 import Character from "@/core/components/figures/character";
 
+/* TODO:
+ * Make this type that work something like this
+ * When passing Custom component the Icon and label type must be excluded
+ * And if Icon or Label is passed Custom component must be excluded
+ */
+
 type Props = Pick<Variants, "intent" | "volume" | "theme"> & {
   theme?: Extract<
     Variants["theme"],
@@ -14,31 +20,26 @@ type Props = Pick<Variants, "intent" | "volume" | "theme"> & {
   >;
   children: React.ReactNode;
   Icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  name?: string;
-  about?: string;
-  avatar?: string;
+  label?: string;
+  Custom?: React.ReactNode;
   position?: "top/left" | "top/right" | "bottom/left" | "bottom/right";
 };
 
 const Menu = ({
   children,
   Icon,
-  name,
-  about,
-  avatar,
+  label,
+  Custom,
   position = "bottom/left",
   ...props
 }: Props) => {
   return (
     <HeadlessMenu as="div" className="relative inline-block text-left">
       <HeadlessMenu.Button className={purge(variants(props))}>
+        {/* In order to apply the Custom component passed, Icon, and label must be excluded */}
         {Icon ? <Icon className="h-4 w-4 stroke-2" /> : <></>}
-        {name && !about ? <span>{name}</span> : <></>}
-        {name && about ? (
-          <Character name={name} about={about} avatar={avatar} />
-        ) : (
-          <></>
-        )}
+        {label ? <span>{label}</span> : <></>}
+        {!label && !Icon && Custom ? Custom : <></>}
       </HeadlessMenu.Button>
       <Transition
         as={Fragment}

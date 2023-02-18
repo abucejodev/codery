@@ -6,7 +6,7 @@ import variants, { type Variants } from "../variants";
 
 type Props = Variants & {
   Icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  name?: string;
+  label?: string;
   isFull?: boolean;
   isLoading?: boolean;
   isDisabled?: boolean;
@@ -15,7 +15,7 @@ type Props = Variants & {
 
 const Button = ({
   Icon,
-  name,
+  label,
   isLoading = false,
   isDisabled = false,
   onClick = () => {},
@@ -28,7 +28,7 @@ const Button = ({
       className={purge(variants(props))}>
       {isLoading ? <Spinner /> : <></>}
       {Icon && !isLoading ? <Icon className="h-4 w-4 stroke-2" /> : <></>}
-      {name ? <span>{name}</span> : <></>}
+      {label ? <span>{label}</span> : <></>}
     </button>
   );
 };
