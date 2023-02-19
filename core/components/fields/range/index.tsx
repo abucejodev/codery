@@ -1,8 +1,17 @@
 import TField from "@/core/types/field";
+import { useId } from "react";
+import Fields from "..";
 
-const Range =({ name, ...props }: TField) => {
+const Range = ({ name, ...props }: TField) => {
+  const id = useId();
+
   return (
-    <div className="flex items-center">
+    <Fields.Body
+      id={id}
+      label={props.label}
+      description={props.description}
+      errors={props.errors}
+      tooltip={props.tooltip}>
       <input
         type="range"
         id={props.id}
@@ -21,8 +30,7 @@ const Range =({ name, ...props }: TField) => {
         onBlur={props.onBlur}
         className={`${props.className ? props.className : ""}`}
       />
-      {props.children}
-    </div>
+    </Fields.Body>
   );
 };
 

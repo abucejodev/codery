@@ -1,11 +1,20 @@
 import TField from "@/core/types/field";
+import { useId } from "react";
+import Fields from "..";
 
 const CheckBox = ({ name, ...props }: TField) => {
+  const id = useId();
+
   return (
-    <div className="flex items-center">
+    <Fields.Body
+      id={id}
+      label={props.label}
+      description={props.description}
+      errors={props.errors}
+      tooltip={props.tooltip}>
       <input
         type="checkbox"
-        id={props.id}
+        id={id}
         name={name}
         value={props.value}
         defaultValue={props.defaultValue}
@@ -18,8 +27,7 @@ const CheckBox = ({ name, ...props }: TField) => {
         onBlur={props.onBlur}
         className={`${props.className ? props.className : ""}`}
       />
-      {props.children}
-    </div>
+    </Fields.Body>
   );
 };
 

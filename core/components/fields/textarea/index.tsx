@@ -1,10 +1,17 @@
 import TField from "@/core/types/field";
+import { useId } from "react";
+import Fields from "..";
 
 const Textarea = ({ name, ...props }: TField) => {
-  return (
-    <div className="flex items-center">
-      {props.children}
+  const id = useId();
 
+  return (
+    <Fields.Body
+      id={id}
+      label={props.label}
+      description={props.description}
+      errors={props.errors}
+      tooltip={props.tooltip}>
       <textarea
         id={props.id}
         name={name}
@@ -21,7 +28,7 @@ const Textarea = ({ name, ...props }: TField) => {
           props.className ? props.className : ""
         } placeholder:text-xs placeholder:font-semibold placeholder:text-obsidian/50`}
       />
-    </div>
+    </Fields.Body>
   );
 };
 
