@@ -1,9 +1,10 @@
 type Props = {
   name: string;
+  id?: string;
 };
 
-const Label = ({ name }: Props) => {
-  return <h3>{name}</h3>;
+const Label = ({ name, id }: Props) => {
+  return <label id={id}>{name}</label>;
 };
 
 export default Label;
