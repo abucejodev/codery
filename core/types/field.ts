@@ -1,4 +1,5 @@
 import { ChangeEvent, FocusEvent } from "react";
+import { ZodError } from "zod";
 
 type TInputType =
   | "text"
@@ -38,6 +39,7 @@ type TField = {
   onChange?: FieldChangeHandler;
   onBlur?: FieldBlurHandler;
   className?: string;
+  errors?: ZodError;
   children?: React.ReactNode;
 };
 
