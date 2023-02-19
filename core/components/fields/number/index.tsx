@@ -1,6 +1,6 @@
-import TFieldProps from "@/core/types/field";
+import TField from "@/core/types/field";
 
-const Number = ({ name, ...props }: TFieldProps) => {
+const Number = ({ name, ...props }: TField) => {
   return (
     <div className="flex items-center">
       {props.children}

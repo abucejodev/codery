@@ -1,6 +1,6 @@
-import TFieldProps from "@/core/types/field";
+import TField from "@/core/types/field";
 
-const Radio =({ name, ...props }: TFieldProps) => {
+const Radio =({ name, ...props }: TField) => {
   return (
     <div className="flex items-center">
       <input

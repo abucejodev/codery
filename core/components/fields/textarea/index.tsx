@@ -1,6 +1,6 @@
-import TFieldProps from "@/core/types/field";
+import TField from "@/core/types/field";
 
-const Textarea = ({ name, ...props }: TFieldProps) => {
+const Textarea = ({ name, ...props }: TField) => {
   return (
     <div className="flex items-center">
       {props.children}
