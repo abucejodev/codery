@@ -27,7 +27,7 @@ const Button = ({
       disabled={isDisabled || isLoading}
       className={purge(variants(props))}>
       {isLoading ? <Spinner /> : <></>}
-      {Icon && !isLoading ? <Icon className="h-4 w-4 stroke-2" /> : <></>}
+      {Icon && !isLoading ? <Icon className="h-5 w-5" /> : <></>}
       {label ? <span>{label}</span> : <></>}
     </button>
   );
