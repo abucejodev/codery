@@ -1,9 +1,13 @@
 import { ChangeEvent, FocusEvent } from "react";
 
+type TInputType = "text" | "number" | "email" | "password" | "date" | "time" | "range";
+type FieldChangeHandler = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+type FieldBlurHandler = (event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+
 type TField = {
   id?: string;
   name?: string;
-  type?: string;
+  type?: TInputType;
   value?: string;
   defaultValue?: string;
   defaultChecked?: boolean;
@@ -13,13 +17,12 @@ type TField = {
   readOnly?: boolean;
   min?: number;
   max?: number;
+  step?: number;
   maxLength?: number;
-  onChange?: (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
-  onBlur?: (event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-  children?: React.ReactNode;
+  onChange?: FieldChangeHandler
+  onBlur?: FieldBlurHandler
   className?: string;
+  children?: React.ReactNode
 };
 
 export default TField;
