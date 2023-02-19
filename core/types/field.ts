@@ -1,4 +1,6 @@
-type TFieldProps = {
+import { ChangeEvent, FocusEvent } from "react";
+
+type TField = {
   id?: string;
   name?: string;
   type?: string;
@@ -12,10 +14,12 @@ type TFieldProps = {
   min?: number;
   max?: number;
   maxLength?: number;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  onChange?: (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+  onBlur?: (event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   children?: React.ReactNode;
   className?: string;
 };
 
-export default TFieldProps;
+export default TField;
