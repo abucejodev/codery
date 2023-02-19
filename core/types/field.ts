@@ -23,6 +23,9 @@ type TField = {
   name?: string;
   type?: TInputType;
   value?: string;
+  label?: string;
+  description?: string;
+  tooltip?: string;
   defaultValue?: string;
   defaultChecked?: boolean;
   placeholder?: string;
@@ -40,6 +43,7 @@ type TField = {
   onBlur?: FieldBlurHandler;
   className?: string;
   errors?: ZodError;
+  Icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   children?: React.ReactNode;
 };
 
