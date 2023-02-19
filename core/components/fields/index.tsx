@@ -1,3 +1,4 @@
+import Body from "./body";
 import CheckBox from "./checkbox";
 import Date from "./date";
 import File from "./file";
@@ -8,6 +9,7 @@ import Textarea from "./textarea";
 import TextBox from "./textbox";
 
 const Fields = {
+  Body: Body,
   Checkbox: CheckBox,
   Date: Date,
   File: File,
