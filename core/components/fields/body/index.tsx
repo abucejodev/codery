@@ -10,7 +10,6 @@ const Body = ({
   errors,
   description,
   tooltip,
-  Icon,
 }: TField) => {
   return (
     <div className="flex flex-col gap-4">
@@ -20,7 +19,7 @@ const Body = ({
       </div>
       {description ? <Description paragraph={description} /> : null}
       {children}
-      <ErrorMessage Icon={Icon} message={errors?.message} />
+      <ErrorMessage message={errors?.message} />
     </div>
   );
 };
