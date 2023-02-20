@@ -4,7 +4,6 @@ type Field<Extension> = Extension & {
   Icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   label?: string;
   description?: string;
-  value?: string;
   tooltip?: string;
   defaultValue?: string;
   isRequired?: boolean;
