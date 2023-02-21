@@ -1,6 +1,6 @@
 import type Fields from "@/core/types/fields";
 import { useId } from "react";
-import Shell from "../_shell";
+import Shell from "../shell";
 
 type Props = Fields<{
   value?: string;
