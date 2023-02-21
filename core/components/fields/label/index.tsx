@@ -4,7 +4,11 @@ type Props = {
 };
 
 const Label = ({ name, id }: Props) => {
-  return <label id={id}>{name}</label>;
+  return (
+    <label id={id} className="text-sm font-semibold text-obsidian">
+      {name}
+    </label>
+  );
 };
 
 export default Label;
