@@ -2,7 +2,12 @@ import TField from "@/core/types/field";
 import { useId } from "react";
 import Fields from "..";
 
-const Email = ({ name, ...props }: TField) => {
+type Props = TField<{
+  value?: string;
+  placeholder?: string;
+}>;
+
+const Email = ({ name, ...props }: Props) => {
   const id = useId();
 
   return (
