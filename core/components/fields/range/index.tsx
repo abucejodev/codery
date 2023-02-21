@@ -6,6 +6,8 @@ type Props = TField<{
   min?: number;
   max?: number;
   step?: number;
+  value?: string;
+  placeholder?: string;
 }>;
 
 const Range = ({ name, ...props }: Props) => {
