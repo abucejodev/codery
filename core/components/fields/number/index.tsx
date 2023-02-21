@@ -5,6 +5,8 @@ import Fields from "..";
 type Props = TField<{
   min?: number;
   max?: number;
+  value?: string;
+  placeholder?: string;
 }>;
 
 const Number = ({ name, ...props }: Props) => {
