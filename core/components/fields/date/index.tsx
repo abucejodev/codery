@@ -5,7 +5,7 @@ import Fields from "..";
 type Props = TField<{
   value?: string;
   placeholder?: string;
-}>
+}>;
 
 const Date = ({ name, ...props }: Props) => {
   const id = useId();

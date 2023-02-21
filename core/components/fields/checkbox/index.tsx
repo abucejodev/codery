@@ -3,10 +3,10 @@ import { useId } from "react";
 import Fields from "..";
 
 type Props = TField<{
-  defaultChecked?: boolean
+  defaultChecked?: boolean;
   value?: string;
   placeholder?: string;
-}>
+}>;
 
 const CheckBox = ({ name, ...props }: Props) => {
   const id = useId();
