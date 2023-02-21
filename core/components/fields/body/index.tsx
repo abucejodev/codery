@@ -1,7 +1,7 @@
 import Description from "../description";
 import ErrorMessage from "../error-message";
 import Label from "../label";
-import TField from "@/core/types/field";
+import type TField from "@/core/types/field";
 
 type Props = TField<{
   children: React.ReactNode;
