@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 const variants = cva(
   [
-    "rounded text-sm font-medium quartzspace-nowrap border border-transparent [&_span]:whitespace-nowrap [&_span]:leading-4",
+    "rounded text-sm font-medium quartzspace-nowrap border border-transparent [&_span]:whitespace-nowrap",
     "flex items-center gap-2",
     "focus:outline-sky-500 enabled:active:scale-95 disabled:opacity-80",
     "transition-all duration-100 ease-in",
