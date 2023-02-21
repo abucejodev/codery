@@ -4,6 +4,8 @@ import Fields from "..";
 
 type Props = TField<{
   maxLength?: number;
+  value?: string;
+  placeholder?: string;
 }>;
 
 const Textarea = ({ name, ...props }: Props) => {
