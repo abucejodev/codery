@@ -2,7 +2,12 @@ import TField from "@/core/types/field";
 import { useId } from "react";
 import Fields from "..";
 
-const Number = ({ name, ...props }: TField) => {
+type Props = TField<{
+  min?: number;
+  max?: number;
+}>;
+
+const Number = ({ name, ...props }: Props) => {
   const id = useId();
 
   return (
@@ -22,6 +27,8 @@ const Number = ({ name, ...props }: TField) => {
           value={props.value}
           defaultValue={props.defaultValue}
           placeholder={props.placeholder}
+          min={props.min}
+          max={props.max}
           required={props.isRequired}
           disabled={props.isDisabled}
           readOnly={props.readOnly}
