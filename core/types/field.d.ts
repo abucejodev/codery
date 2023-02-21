@@ -1,7 +1,16 @@
 import { type ZodFormattedError } from "zod";
 
-type Field<Extension> = Extension & {
-  Icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+type FieldChangeHandler = (
+  event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+) => void;
+
+type FieldBlurHandler = (
+  event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+) => void;
+
+type TField<Extension> = Extension & {
+  id?: string;
+  name?: string;
   label?: string;
   description?: string;
   tooltip?: string;
@@ -9,10 +18,10 @@ type Field<Extension> = Extension & {
   isRequired?: boolean;
   isDisabled?: boolean;
   readOnly?: boolean;
-  onChange?: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;
-  onBlur?: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>;
+  onChange?: FieldChangeHandler;
+  onBlur?: FieldBlurHandler;
   errors?: ZodFormattedError;
   className?: string;
 };
 
-export default Field;
+export default TField;
