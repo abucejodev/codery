@@ -2,7 +2,11 @@ import TField from "@/core/types/field";
 import { useId } from "react";
 import Fields from "..";
 
-const CheckBox = ({ name, ...props }: TField) => {
+type Props = TField<{
+  defaultChecked?: boolean
+}>
+
+const CheckBox = ({ name, ...props }: Props) => {
   const id = useId();
 
   return (
