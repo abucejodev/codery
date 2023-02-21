@@ -3,7 +3,7 @@ type Props = {
 };
 
 const Description = ({ paragraph }: Props) => {
-  return <p>{paragraph}</p>;
+  return <p className="text-xs  text-obsidian/50">{paragraph}</p>;
 };
 
 export default Description;
