@@ -6,6 +6,8 @@ type Props = TField<{
   isMultiple?: boolean;
   accept?: string;
   capture?: boolean | "user" | "environment";
+  value?: string;
+  placeholder?: string;
 }>;
 
 const File = ({ name, ...props }: Props) => {
