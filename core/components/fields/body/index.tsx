@@ -1,16 +1,13 @@
-import TField from "@/core/types/field";
 import Description from "../description";
 import ErrorMessage from "../error-message";
 import Label from "../label";
+import TField from "@/core/types/field";
 
-const Body = ({
-  id,
-  children,
-  label,
-  errors,
-  description,
-  tooltip,
-}: TField) => {
+type Props = TField<{
+  children: React.ReactNode;
+}>;
+
+const Body = ({ id, children, label, errors, description, tooltip }: Props) => {
   return (
     <div className="flex max-w-lg flex-col gap-1">
       {/* label and descriptionon */}
