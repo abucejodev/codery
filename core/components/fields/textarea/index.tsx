@@ -1,4 +1,4 @@
-import type TField from "@/core/types/field";
+import type TField from "@/core/types/fields";
 import { useId } from "react";
 import Fields from "..";
 
