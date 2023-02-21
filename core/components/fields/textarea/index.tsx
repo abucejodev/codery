@@ -1,8 +1,8 @@
-import type TField from "@/core/types/fields";
+import type Fields from "@/core/types/fields";
 import { useId } from "react";
 import Shell from "../_shell";
 
-type Props = TField<{
+type Props = Fields<{
   minLength?: number;
   maxLength?: number;
   value?: string;
