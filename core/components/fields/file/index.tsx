@@ -2,7 +2,13 @@ import TField from "@/core/types/field";
 import { useId } from "react";
 import Fields from "..";
 
-const File = ({ name, ...props }: TField) => {
+type Props = TField<{
+  isMultiple?: boolean;
+  accept?: string;
+  capture?: boolean | "user" | "environment";
+}>;
+
+const File = ({ name, ...props }: Props) => {
   const id = useId();
 
   return (
