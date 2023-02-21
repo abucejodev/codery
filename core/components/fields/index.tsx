@@ -1,4 +1,3 @@
-import Body from "./body";
 import CheckBox from "./checkbox";
 import Date from "./date";
 import Email from "./email";
@@ -10,7 +9,6 @@ import Textarea from "./textarea";
 import TextBox from "./textbox";
 
 const Fields = {
-  Body: Body,
   Checkbox: CheckBox,
   Date: Date,
   Email: Email,
