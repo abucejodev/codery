@@ -19,7 +19,7 @@ type TField<Extension> = Extension & {
   readOnly?: boolean;
   onChange?: OnChange;
   onBlur?: OnBlur;
-  errors?: ZodFormattedError;
+  errors?: string;
   className?: string;
 };
 
