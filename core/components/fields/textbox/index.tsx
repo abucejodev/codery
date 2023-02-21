@@ -1,6 +1,5 @@
 import type TField from "@/core/types/fields";
 import { useId } from "react";
-import Fields from "..";
 import Shell from "../_shell";
 
 type Props = TField<{
