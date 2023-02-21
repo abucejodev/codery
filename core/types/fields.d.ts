@@ -8,7 +8,7 @@ type OnBlur = (
   event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>
 ) => void;
 
-type TField<Extension> = Extension & {
+type Fields<Extension> = Extension & {
   label?: string;
   description?: string;
   tooltip?: string;
@@ -22,4 +22,4 @@ type TField<Extension> = Extension & {
   className?: string;
 };
 
-export default TField;
+export default Fields;
