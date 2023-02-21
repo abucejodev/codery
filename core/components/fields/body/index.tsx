@@ -12,12 +12,16 @@ const Body = ({
   tooltip,
 }: TField) => {
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex items-center gap-3">
-        {label ? <Label name={label} id={id} /> : null}
-        {tooltip ? <div>{tooltip}</div> : null}
+    <div className="flex max-w-lg flex-col gap-1">
+      {/* label and descriptionon */}
+      <div className="flexflex-col gap-1">
+        {/* label and tooltip */}
+        <div className="grid grid-cols-[auto,1fr] gap-2">
+          {label ? <Label name={label} id={id} /> : null}
+          {tooltip ? <div>{tooltip}</div> : null}
+        </div>
+        {description ? <Description paragraph={description} /> : null}
       </div>
-      {description ? <Description paragraph={description} /> : null}
       {children}
       <ErrorMessage message={errors?.message} />
     </div>
@@ -25,4 +29,3 @@ const Body = ({
 };
 
 export default Body;
-
