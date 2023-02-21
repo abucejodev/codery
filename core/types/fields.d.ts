@@ -9,7 +9,6 @@ type OnBlur = (
 ) => void;
 
 type TField<Extension> = Extension & {
-  name?: string;
   label?: string;
   description?: string;
   tooltip?: string;
