@@ -6,9 +6,9 @@ type Props = {
 
 const ErrorMessage = ({ message }: Props) => {
   return (
-    <div className="mt-1 flex max-w-sm items-center gap-1">
-      <ExclamationCircleIcon className="h-3 w-3 stroke-2 text-ruby" />
-      <p className="text-left text-xs font-semibold text-ruby">{message}</p>
+    <div className="flex items-center gap-1">
+      <ExclamationCircleIcon className="h-3 w-3 text-ruby/75" />
+      <span className="text-ms text-ruby">{message}</span>
     </div>
   );
 };
