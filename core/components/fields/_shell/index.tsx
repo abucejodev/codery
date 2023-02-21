@@ -3,7 +3,7 @@ import ErrorMessage from "../error-message";
 
 type Props = {
   children: React.ReactNode;
-  id?: string;
+  id: string;
   label?: string;
   description?: string;
   errors?: string;
