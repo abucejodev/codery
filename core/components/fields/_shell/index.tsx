@@ -1,5 +1,4 @@
-import Description from "../description";
-import ErrorMessage from "../error-message";
+import { ExclamationCircleIcon } from "@heroicons/react/24/solid";
 
 type Props = {
   children: React.ReactNode;
@@ -31,10 +30,21 @@ const Shell = ({
           )}
           {tooltip ? <div>{tooltip}</div> : <></>}
         </div>
-        {description ? <Description paragraph={description} /> : <></>}
+        {description ? (
+          <p className="text-xs  text-obsidian/50">{description}</p>
+        ) : (
+          <></>
+        )}
       </div>
       {children}
-      {errors ? <ErrorMessage message={errors} /> : <></>}
+      {errors ? (
+        <div className="flex items-center gap-1">
+          <ExclamationCircleIcon className="h-3 w-3 text-ruby/75" />
+          <span className="text-ms text-ruby">{errors}</span>
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
