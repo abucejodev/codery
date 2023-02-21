@@ -2,7 +2,13 @@ import TField from "@/core/types/field";
 import { useId } from "react";
 import Fields from "..";
 
-const Range = ({ name, ...props }: TField) => {
+type Props = TField<{
+  min?: number;
+  max?: number;
+  step?: number;
+}>;
+
+const Range = ({ name, ...props }: Props) => {
   const id = useId();
 
   return (
@@ -21,7 +27,6 @@ const Range = ({ name, ...props }: TField) => {
           name={name}
           value={props.value}
           defaultValue={props.defaultValue}
-          defaultChecked={props.defaultChecked}
           min={props.min}
           max={props.max}
           step={props.step}
