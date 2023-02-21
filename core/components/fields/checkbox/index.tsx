@@ -4,6 +4,8 @@ import Fields from "..";
 
 type Props = TField<{
   defaultChecked?: boolean
+  value?: string;
+  placeholder?: string;
 }>
 
 const CheckBox = ({ name, ...props }: Props) => {
@@ -24,7 +26,6 @@ const CheckBox = ({ name, ...props }: Props) => {
           id={id}
           name={name}
           value={props.value}
-          defaultValue={props.defaultValue}
           defaultChecked={props.defaultChecked}
           placeholder={props.placeholder}
           required={props.isRequired}
