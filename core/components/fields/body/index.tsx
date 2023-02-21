@@ -20,7 +20,7 @@ const Body = ({ id, children, label, errors, description, tooltip }: Props) => {
         {description ? <Description paragraph={description} /> : null}
       </div>
       {children}
-      <ErrorMessage message={errors?.message} />
+      {errors ? <ErrorMessage message={errors?.message} /> : null}
     </div>
   );
 };
