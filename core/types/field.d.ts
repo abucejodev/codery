@@ -1,10 +1,10 @@
 import { type ZodFormattedError } from "zod";
 
-type FieldChangeHandler = (
+type OnChange = (
   event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
 ) => void;
 
-type FieldBlurHandler = (
+type OnBlur = (
   event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>
 ) => void;
 
@@ -18,8 +18,8 @@ type TField<Extension> = Extension & {
   isRequired?: boolean;
   isDisabled?: boolean;
   readOnly?: boolean;
-  onChange?: FieldChangeHandler;
-  onBlur?: FieldBlurHandler;
+  onChange?: OnChange;
+  onBlur?: OnBlur;
   errors?: ZodFormattedError;
   className?: string;
 };
